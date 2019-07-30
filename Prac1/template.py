@@ -34,6 +34,11 @@ def blinkLeds():
     GPIO.output(10,secBit)
     GPIO.output(12,thirdBit)
 
+def button_callback2(channel):
+    
+    operator("minus")
+    blinkLeds()	
+
 def main():
 GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
