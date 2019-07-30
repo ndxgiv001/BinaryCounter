@@ -11,7 +11,16 @@ Date: 28/07/2019
 
 # import Relevant Librares
 import RPi.GPIO as GPIO
+myList = [0]
 
+def operator(oprtr):
+    if(oprtr=="plus"):
+        myList[0]=(myList[0]+1)%8
+    else:
+        if((myList[0]-1)<0):
+            myList[0] = 7
+        else:
+            myList[0]=myList[0]-1
 
 
 
