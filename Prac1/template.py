@@ -16,6 +16,17 @@ import RPi.GPIO as GPIO
 
 
 def main():
+GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(8,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(12,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(10,GPIO.OUT,initial=GPIO.LOW)
+    GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    #GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
+    GPIO.add_event_detect(16, GPIO.FALLING, callback=button_callback,bouncetime=300)
+    
+    GPIO.add_event_detect(18,GPIO.RISING,callback=button_callback2,bouncetime=300)
     
 
 
