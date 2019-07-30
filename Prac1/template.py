@@ -22,7 +22,17 @@ def operator(oprtr):
         else:
             myList[0]=myList[0]-1
 
-
+def blinkLeds():
+    bitss = bin(myList[0]).zfill(4)
+    bits=bitss.replace('b', '')
+    firstBit =int(bits[-1])
+    secBit=int(bits[-2])
+    thirdBit=int(bits[-3])
+    
+    
+    GPIO.output(8,firstBit)
+    GPIO.output(10,secBit)
+    GPIO.output(12,thirdBit)
 
 def main():
 GPIO.setwarnings(False)
