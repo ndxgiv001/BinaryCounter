@@ -38,7 +38,9 @@ def button_callback2(channel):
     
     operator("minus")
     blinkLeds()	
-
+def button_callback(channel):
+    blinkLeds()
+    operator("plus")
 def main():
 GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
